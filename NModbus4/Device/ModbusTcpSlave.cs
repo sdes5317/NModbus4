@@ -197,6 +197,9 @@
                 throw new ArgumentException(msg);
             }
 
+            connection.ModbusMasterTcpConnectionClosed -= OnMasterConnectionClosedHandler;
+            connection.Dispose();
+
             Debug.WriteLine($"Removed Master {e.EndPoint}");
         }
     }
